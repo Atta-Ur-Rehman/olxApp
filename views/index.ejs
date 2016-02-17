@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <!-- Firebase -->
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="/javascripts/main.js"></script>
+</head>
+<body>
+<div ng-app="Index">
+    <div ng-controller="mainController">
+        <h1 style="color: #1AC6BB;">Welcome to OLX Application</h1>
+        <md-button id="signUp" class="md-raised md-primary" ng-if="!isloggin">Create Account</md-button>
+        <md-button id="Login" class="md-raised md-primary" ng-if ="!isloggin">Login</md-button>
+        <md-button id="logout" class="md-raised md-primary" ng-if ="isloggin">Logout</md-button>
+        <md-button class="md-raised md-warn" ng-click="postMyData()" ng-if ="isloggin">Post Your Add</md-button>
+        <md-content layout="row" layout-align="space-between start" style="background-color: #FFFFFF;overflow:auto">
+            <md-card class="md-whiteframe-z1" flex >
+                <md-list-item class="backcolorwhite  foreColorWhite md-whiteframe-z1">
+                    <p style="padding: 1%;" class="textAlignLeft textBold textColor" ng-repeat="field in ['Title','Description','Amount','Contact#','Image' , 'Status']" style="margin: -1.35%">{{field}}</p>
+                </md-list-item>
+                <md-list-item style="padding: 3%;" ng-repeat="task in ShowAllData | filter : test ">
+                    <p>{{task.title}}</p>
+                    <p>{{task.description}}</p>
+                    <p>{{task.Amount}}</p>
+                    <p>{{task.number}}</p>
+                    <p><img ng-src="{{task.img}}" src="#" alt="your image" style="width: 100px;height:100px;" id="img"/></p>
+                    <p ><md-button id="Login" class="md-raised md-primary" ng-click="view()">View</md-button></p>
+                </md-list-item>
+
+            </md-card>
+        </md-content>
+    </div>
+</div>
+
+</body>
+</html>

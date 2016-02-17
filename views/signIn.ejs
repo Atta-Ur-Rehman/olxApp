@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <!-- Firebase -->
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="/javascripts/main.js"></script>
+</head>
+<body>
+<h1 style="color: #1AC6BB;" id="homePage">Welcome to OLX Application</h1>
+<div style="width:450px; margin:0 auto;">
+    <div ng-app="Index" style="border-radius: 10px;background-color: rgb(246, 246, 246);width: 350px;height: 300px">
+        <div ng-controller="mainController"  style="text-align: center">
+            <!--<h2 style="color: #1AC6BB">Online Sell Application</h2>-->
+            <md-content layout="row" layout-align="center" style="border-radius: 10px;background-color: rgb(246, 246, 246);width: 350px;">
+                <div layout-gt-sm="column">
+                    <md-input-container  style="width: 252px" class="md-block" flex-gt-sm>
+                        <label style="color: #1AC6BB;font-size: 20px;">Email</label>
+                        <input type="email" id="userEmail">
+                    </md-input-container>
+                    <md-input-container style="width: 252px;" class="md-block" flex-gt-sm>
+                        <label style="color: #1AC6BB;font-size: 20px;">Password</label>
+                        <input type="password" id="userpassword">
+                    </md-input-container>
+                </div>
+
+            </md-content>
+            <div layout="row" layout-sm="column" layout-align="space-around" id="loader">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+            <md-button id="login" class="md-raised md-primary">Login</md-button>
+            <md-button id="createaccount" class="md-raised md-primary">Create Account</md-button>
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+</html>
